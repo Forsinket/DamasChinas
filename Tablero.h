@@ -1,43 +1,24 @@
 #ifndef TABLERO_H
 #define TABLERO_H
 
-
-
-
 class Tablero{
 
-
-
     private: 
-        int Filas();
-        int columnas();
-
-
-    public: 
+        int filas;
+        int columnas;
+    
+    public:
+    	//Constructor y destructor
         Tablero();
         ~Tablero();
-        void GenerarTablero();     
+        
+        //Metodos set
+        void setColumnas(int numeroColumnas);
+        void setFilas(int numeroFilas);
+        
+		//Otros metodos
+        void generarTablero(int numeroFilas, int numeroColumnas);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
-
-
+};
 
 #endif
