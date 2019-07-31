@@ -3,17 +3,18 @@
 #include <string>
 #include <stdlib.h>
 
-Tablero::Tablero();
+Tablero::Tablero(){
+}
 
 Tablero::~Tablero(){
 }
 
 void Tablero::setNumeroCasillas()
 {
-	cout << "Digite el numero de filas y columnas del tablero";
-	cin >> numeroFilas;
+	std::cout << "Digite el numero de filas y columnas del tablero";
+	std::cin >> filas;
 	
-	numeroColumnas = numeroFilas;
+	columnas = filas;
 }
 
 void Tablero::generarTablero(int numeroFilas, int numeroColumnas)
