@@ -13,3 +13,5 @@ class Ficha{
 		void setPosicion(int fila, int columna);
 		bool puedeComer();
 };
+
+#endif
