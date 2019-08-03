@@ -6,7 +6,7 @@ class Tablero{
     private: 
         int filas;
         int columnas;
-        char **tableroPuntero;
+        int **tableroPuntero;
     
     public:
     	//Constructor y destructor
@@ -17,7 +17,7 @@ class Tablero{
         void setNumeroCasillas();
         
 		//Otros metodos
-        void generarTablero(int numeroFilas, int numeroColumnas);
+        void generarTablero();
 
 };
 

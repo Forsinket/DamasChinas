@@ -17,13 +17,15 @@ void Tablero::setNumeroCasillas()
 	columnas = filas;
 }
 
-void Tablero::generarTablero(int numeroFilas, int numeroColumnas)
+void Tablero::generarTablero()
 {
-	tableroPuntero = new char*[filas]; //Reservar memoria para las filas
+	setNumeroCasillas();
+	
+	tableroPuntero = new int*[filas]; //Reservar memoria para las filas
 	
 	for(int i = 0; i < filas; i++)
 	{
-		tableroPuntero[i] = new char[columnas]; //Reservar memoria para las columnas
+		tableroPuntero[i] = new int[columnas]; //Reservar memoria para las columnas
 	}
 	
 	//int filasAOcupar = filas - 2;
@@ -35,13 +37,16 @@ void Tablero::generarTablero(int numeroFilas, int numeroColumnas)
 	{
 		for(int j = 0; j < columnas; j++)
 		{
-			if(i % 2 == 0 && j % 2 == 0)
-			{
-				*(*(tableroPuntero+i)+j) = 'B';
-			}else if(i % 2 == 0 && j % 2 != 0)
-			{
-				*(*(tableroPuntero+i)+j) = 'N';
-			}
+			*(*(tableroPuntero+i)+j) = 0;
+		}
+	}
+
+	//Mostrar tablero
+	for(int i = 0; i < filas; i++)
+	{
+		for(int j = 0; j < columnas; j++)
+		{
+			std::cout << *(*(tableroPuntero+i)+j) << std::endl;
 		}
 	}
 }
