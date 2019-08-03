@@ -6,7 +6,7 @@ Partida::Partida(){
 Partida::~Partida(){
 }
 
-void Partida::IniciarPartida(Tablero * tablero)
+void Partida::iniciarPartida(Tablero * tablero)
 {
 	tablero->generarTablero();
 }
