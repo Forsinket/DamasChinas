@@ -11,7 +11,7 @@ Tablero::~Tablero(){
 
 void Tablero::setNumeroCasillas()
 {
-	std::cout << "Digite el numero de filas y columnas del tablero";
+	std::cout << "Digite el numero de filas y columnas del tablero: ";
 	std::cin >> filas;
 	
 	columnas = filas;
@@ -46,8 +46,10 @@ void Tablero::generarTablero()
 	{
 		for(int j = 0; j < columnas; j++)
 		{
-			std::cout << *(*(tableroPuntero+i)+j) << std::endl;
+			std::cout << tableroPuntero[i][j] << "  ";
 		}
+
+		std::cout << std::endl;
 	}
 }
 
