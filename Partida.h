@@ -10,21 +10,16 @@ class Partida{
         //Jugador jugadorUno;
         //Jugador jugadorDos;
 
-
-    
-    
-    
-    public:
+	public:
     //Constructor y destructor
         Partida();
         ~Partida();
 
     //Metodos
-            void iniciarPartida(Tablero * tablero);
-            void guardarPartida();
-            void cargarPartida();
-            void cerrarPartida();
-
+        void iniciarPartida();
+        void guardarPartida();
+        void cargarPartida();
+    	void cerrarPartida();
 };
 
 
