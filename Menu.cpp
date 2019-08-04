@@ -1,6 +1,7 @@
 #include "Menu.h"
 #include "Partida.h"
 #include <iostream>
+#include "Partida.h"
 using namespace std;
 
 
@@ -14,34 +15,20 @@ void Menu::menuPrincipal()
 {
 
     int opcion;
-
-    cout << "eliga una opcion" << endl;
+	
+	cout << "------Damas-------" << endl;
     cout << "1. iniciar partida" << endl;
     cout << "2. cargar partida" << endl;
     cout << "3. Cerrar" << endl;
+    cout << "Elija una opcion" << endl;
     cin >> opcion;
 
- switch (opcion)
- {
- case 1:
-    iniciarPartida(Tablero * tablero);
-        
-        break;
-
- case 2:
-    cargarPartida();
-
-        break;
-
-case 3:
-
-    exit(-1);
-    break;
-
- default:
-     break;
- }
- 
-    
-
-};
+ 	switch (opcion)
+ 	{
+ 		case 1:
+ 			Partida * partida = new Partida();
+    		partida->iniciarPartida();
+    		
+        	break;
+	}
+}

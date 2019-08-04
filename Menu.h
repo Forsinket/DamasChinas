@@ -3,24 +3,11 @@
 
 class Menu
 {
-
-    private:
-
-
-
-
-
-    public:
+	public:
         Menu();
         ~Menu();
 
         void menuPrincipal();
-
-
-
-
-
 };
-
 
 #endif
