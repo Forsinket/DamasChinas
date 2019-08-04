@@ -11,6 +11,7 @@ Tablero::~Tablero(){
 
 void Tablero::setNumeroCasillas()
 {
+	
 	std::cout << "Digite el numero de filas y columnas del tablero: ";
 	std::cin >> filas;
 	
@@ -28,8 +29,8 @@ void Tablero::generarTablero()
 		tableroPuntero[i] = new int[columnas]; //Reservar memoria para las columnas
 	}
 	
-	//int filasAOcupar = filas - 2;
-	//int filasOcupadasPorFicha = filasAOcupar / 2;
+	int filasAOcupar = filas - 2;
+	int filasOcupadasPorFicha = filasAOcupar / 2;
 	
 	//Generando tablero
 	
@@ -37,7 +38,25 @@ void Tablero::generarTablero()
 	{
 		for(int j = 0; j < columnas; j++)
 		{
-			*(*(tableroPuntero+i)+j) = 0;
+			if(i % 2 == 0 && j % 2 != 0 && i <= (filasOcupadasPorFicha - 1)){
+				*(*(tableroPuntero+i)+j) = 2;
+			}if(i % 2 == 0 && j % 2 == 0 && i <= (filasOcupadasPorFicha - 1)){
+				*(*(tableroPuntero+i)+j) = 0;
+			}if(i % 2 != 0 && j % 2 == 0 && i <= (filasOcupadasPorFicha - 1)){
+				*(*(tableroPuntero+i)+j) = 2;
+			}if(i % 2 != 0 && j % 2 != 0 && i <= (filasOcupadasPorFicha - 1)){
+				*(*(tableroPuntero+i)+j) = 0;
+			}if(i == filasOcupadasPorFicha || i == (filasOcupadasPorFicha + 1)){
+				*(*(tableroPuntero+i)+j) = 0;
+			}if(i % 2 == 0 && j % 2 != 0 && i >= (filasOcupadasPorFicha + 2)){
+				*(*(tableroPuntero+i)+j) = 1;
+			}if(i % 2 == 0 && j % 2 == 0 && i >= (filasOcupadasPorFicha + 2)){
+				*(*(tableroPuntero+i)+j) = 0;
+			}if(i % 2 != 0 && j % 2 == 0 && i >= (filasOcupadasPorFicha + 2)){
+				*(*(tableroPuntero+i)+j) = 1;
+			}if(i % 2 != 0 && j % 2 != 0 && i >= (filasOcupadasPorFicha + 2)){
+				*(*(tableroPuntero+i)+j) = 0;
+			}
 		}
 	}
 
