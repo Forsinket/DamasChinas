@@ -11,11 +11,14 @@ Tablero::~Tablero(){
 
 void Tablero::setNumeroCasillas()
 {
+	do
+	{
+		std::cout << "Digite el numero de filas y columnas del tablero: ";
+		std::cin >> filas;
 	
-	std::cout << "Digite el numero de filas y columnas del tablero: ";
-	std::cin >> filas;
+		columnas = filas;
+	} while (filas < 7);
 	
-	columnas = filas;
 }
 
 void Tablero::generarTablero()
@@ -29,8 +32,7 @@ void Tablero::generarTablero()
 		tableroPuntero[i] = new int[columnas]; //Reservar memoria para las columnas
 	}
 	
-	int filasAOcupar = filas - 2;
-	int filasOcupadasPorFicha = filasAOcupar / 2;
+	int espaciosIntermedios = filas - 6;
 	
 	//Generando tablero
 	
@@ -38,24 +40,24 @@ void Tablero::generarTablero()
 	{
 		for(int j = 0; j < columnas; j++)
 		{
-			if(i % 2 == 0 && j % 2 != 0 && i <= (filasOcupadasPorFicha - 1)){
-				*(*(tableroPuntero+i)+j) = 2;
-			}if(i % 2 == 0 && j % 2 == 0 && i <= (filasOcupadasPorFicha - 1)){
-				*(*(tableroPuntero+i)+j) = 0;
-			}if(i % 2 != 0 && j % 2 == 0 && i <= (filasOcupadasPorFicha - 1)){
-				*(*(tableroPuntero+i)+j) = 2;
-			}if(i % 2 != 0 && j % 2 != 0 && i <= (filasOcupadasPorFicha - 1)){
-				*(*(tableroPuntero+i)+j) = 0;
-			}if(i == filasOcupadasPorFicha || i == (filasOcupadasPorFicha + 1)){
-				*(*(tableroPuntero+i)+j) = 0;
-			}if(i % 2 == 0 && j % 2 != 0 && i >= (filasOcupadasPorFicha + 2)){
-				*(*(tableroPuntero+i)+j) = 1;
-			}if(i % 2 == 0 && j % 2 == 0 && i >= (filasOcupadasPorFicha + 2)){
-				*(*(tableroPuntero+i)+j) = 0;
-			}if(i % 2 != 0 && j % 2 == 0 && i >= (filasOcupadasPorFicha + 2)){
-				*(*(tableroPuntero+i)+j) = 1;
-			}if(i % 2 != 0 && j % 2 != 0 && i >= (filasOcupadasPorFicha + 2)){
-				*(*(tableroPuntero+i)+j) = 0;
+			if(i % 2 == 0 && j % 2 == 0 && i <= 2){
+				*(*(tableroPuntero + i) + j) = 0;
+			}if(i % 2 == 0 && j % 2 != 0 && i <= 2){
+				*(*(tableroPuntero + i) + j) = 1;
+			}if(i % 2 != 0 && j % 2 == 0 && i <= 2){
+				*(*(tableroPuntero + i) + j) = 1;
+			}if(i % 2 != 0 && j % 2 != 0 && i <= 2){
+				*(*(tableroPuntero + i) + j) = 0;
+			}if(i > 2 && i < (3 + espaciosIntermedios)){
+				*(*(tableroPuntero + i) + j) = 0;
+			}if(i % 2 == 0 && j % 2 == 0 && i >= (3 + espaciosIntermedios)){
+				*(*(tableroPuntero + i) + j) = 0;
+			}if(i % 2 == 0 && j % 2 != 0 && i >= (3 + espaciosIntermedios)){
+				*(*(tableroPuntero + i) + j) = 2;
+			}if(i % 2 != 0 && j % 2 == 0 && i >= (3 + espaciosIntermedios)){
+				*(*(tableroPuntero + i) + j) = 2;
+			}if(i % 2 != 0 && j % 2 != 0 && i >= (3 + espaciosIntermedios)){
+				*(*(tableroPuntero + i) + j) = 0;
 			}
 		}
 	}
