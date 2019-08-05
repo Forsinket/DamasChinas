@@ -12,16 +12,6 @@ class Maquina: public Jugador
         ~Maquina();
         void moverFicha();
        
-
 };
-
-Maquina::Maquina()
-{
-}
-
-Maquina::~Maquina()
-{
-}
-
 
 #endif
