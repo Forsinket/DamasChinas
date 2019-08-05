@@ -7,6 +7,7 @@ class Jugador{
     protected:
         std::vector<Ficha*> fichas;
         bool tieneTurno;
+        bool ganador;
     
     protected:
         Jugador();

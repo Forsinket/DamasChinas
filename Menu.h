@@ -8,6 +8,8 @@ class Menu
         ~Menu();
 
         void menuPrincipal();
+        void menuEnJuego();
+        void menuFinal();
 };
 
 #endif
