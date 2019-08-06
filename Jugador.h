@@ -15,7 +15,7 @@ class Jugador{
 
         void setTurno();
         void eliminarFicha();
-        virtual void moverFicha();
+        void moverFicha();
         bool puedeComer();
         bool puedeMover();
 };

@@ -10,6 +10,7 @@ class Ficha{
 		Ficha();
 		~Ficha();
 		
+		virtual void moverFicha();
 		void setPosicion(int fila, int columna);
 		bool puedeComer();
 };

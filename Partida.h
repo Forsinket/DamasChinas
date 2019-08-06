@@ -17,8 +17,6 @@ class Partida{
 
     //Metodos
         void iniciarPartida();
-        void guardarPartida();
-        void cargarPartida();
     	void cerrarPartida();
 };
 
