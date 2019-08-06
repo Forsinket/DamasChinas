@@ -25,11 +25,11 @@ void Tablero::generarTablero()
 {
 	setNumeroCasillas();
 	
-	tableroPuntero = new int*[filas]; //Reservar memoria para las filas
+	tableroPuntero = new EspacioTablero**[filas]; //Reservar memoria para las filas
 	
 	for(int i = 0; i < filas; i++)
 	{
-		tableroPuntero[i] = new int[columnas]; //Reservar memoria para las columnas
+		tableroPuntero[i] = new EspacioTablero*[columnas]; //Reservar memoria para las columnas
 	}
 	
 	int espaciosIntermedios = filas - 6;
@@ -41,37 +41,39 @@ void Tablero::generarTablero()
 		for(int j = 0; j < columnas; j++)
 		{
 			if(i % 2 == 0 && j % 2 == 0 && i <= 2){
-				*(*(tableroPuntero + i) + j) = 0;
+				tableroPuntero[i][j] = new Casilla(i ,j ,0);
 			}if(i % 2 == 0 && j % 2 != 0 && i <= 2){
-				*(*(tableroPuntero + i) + j) = 1;
+				tableroPuntero[i][j] = new Peon(i, j, 2);
 			}if(i % 2 != 0 && j % 2 == 0 && i <= 2){
-				*(*(tableroPuntero + i) + j) = 1;
+				tableroPuntero[i][j] = new Peon(i, j, 2);
 			}if(i % 2 != 0 && j % 2 != 0 && i <= 2){
-				*(*(tableroPuntero + i) + j) = 0;
+				tableroPuntero[i][j] = new Casilla(i ,j ,0);
 			}if(i > 2 && i < (3 + espaciosIntermedios)){
-				*(*(tableroPuntero + i) + j) = 0;
+				tableroPuntero[i][j] = new Casilla(i ,j ,0);
 			}if(i % 2 == 0 && j % 2 == 0 && i >= (3 + espaciosIntermedios)){
-				*(*(tableroPuntero + i) + j) = 0;
+				tableroPuntero[i][j] = new Casilla(i ,j ,0);
 			}if(i % 2 == 0 && j % 2 != 0 && i >= (3 + espaciosIntermedios)){
-				*(*(tableroPuntero + i) + j) = 2;
+				tableroPuntero[i][j] = new Peon(i, j, 1);
 			}if(i % 2 != 0 && j % 2 == 0 && i >= (3 + espaciosIntermedios)){
-				*(*(tableroPuntero + i) + j) = 2;
+				tableroPuntero[i][j] = new Peon(i, j, 1);
 			}if(i % 2 != 0 && j % 2 != 0 && i >= (3 + espaciosIntermedios)){
-				*(*(tableroPuntero + i) + j) = 0;
+				tableroPuntero[i][j] = new Casilla(i ,j ,0);
 			}
 		}
 	}
+}
 
+void Tablero::mostrarTablero()
+{
 	//Mostrar tablero
 	for(int i = 0; i < filas; i++)
 	{
 		for(int j = 0; j < columnas; j++)
 		{
-			std::cout << tableroPuntero[i][j] << "  ";
+			std::cout << tableroPuntero[i][j]->getFormaEspacio() << "  ";
 		}
-
+		
 		std::cout << std::endl;
 	}
 }
-
 

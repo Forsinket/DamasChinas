@@ -1,12 +1,16 @@
 #ifndef TABLERO_H
 #define TABLERO_H
+#include "EspacioTablero.h"
+#include "Casilla.h"
+#include "Ficha.h"
+#include "Peon.h"
 
 class Tablero{
 
     private: 
         int filas;
         int columnas;
-        int **tableroPuntero;
+        EspacioTablero ***tableroPuntero;
     
     public:
     	//Constructor y destructor
@@ -18,6 +22,7 @@ class Tablero{
         
 		//Otros metodos
         void generarTablero();
+        void mostrarTablero();
 
 };
 
