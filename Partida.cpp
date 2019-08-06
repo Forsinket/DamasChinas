@@ -10,6 +10,6 @@ void Partida::iniciarPartida()
 {
 	Tablero * tablero = new Tablero();
 	tablero->generarTablero();
-	
+	tablero->mostrarTablero();
 	
 }
