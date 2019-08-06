@@ -11,3 +11,8 @@ Ficha::~Ficha()
 {
     
 }
+
+void Ficha::moverFicha()
+{
+    
+}

@@ -11,3 +11,8 @@ Peon::~Peon()
 {
 
 }
+
+void Peon::moverFicha()
+{
+    
+}

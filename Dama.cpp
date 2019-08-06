@@ -11,3 +11,8 @@ Dama::~Dama()
 {
 
 }
+
+void Dama::moverFicha()
+{
+    
+}
