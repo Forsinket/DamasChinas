@@ -4,14 +4,10 @@
 
 class Peon: public Ficha
 {
-    private:
-    
     public:
-        Peon();
+        Peon(int filaPosicion, int columnaPosicion, int forma);
         ~Peon();
         void moverFicha();
 };
-
-
 
 #endif

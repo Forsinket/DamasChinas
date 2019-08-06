@@ -1,17 +1,14 @@
 #ifndef FICHA_H
 #define FICHA_H
+#include "EspacioTablero.h"
 
-class Ficha{
-	private:
-		int filaPosicion;
-		int columnaPosicion;
-		bool esDama;
+class Ficha: public EspacioTablero{
+
 	public:
-		Ficha();
+		Ficha(int filaPosicion, int columnaPoisicion, int forma);
 		~Ficha();
 		
 		virtual void moverFicha();
-		void setPosicion(int fila, int columna);
 		bool puedeComer();
 };
 

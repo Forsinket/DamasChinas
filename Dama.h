@@ -4,14 +4,10 @@
 
 class Dama: public Ficha
 {
-    private:
-    
     public:
-        Dama();
+        Dama(int filaPosicion, int columnaPosicion, int forma);
         ~Dama();
         void moverFicha();
-
 };
-
 
 #endif
