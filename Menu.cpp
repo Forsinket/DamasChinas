@@ -20,7 +20,7 @@ void Menu::menuPrincipal()
     cout << "1. iniciar partida" << endl;
     cout << "2. cargar partida" << endl;
     cout << "3. Cerrar" << endl;
-    cout << "Elija una opcion" << endl;
+    cout << "Elija una opcion: ";
     cin >> opcion;
 
  	switch (opcion)
