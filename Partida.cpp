@@ -1,6 +1,8 @@
 #include "Partida.h"
 
 Partida::Partida(){
+	tablero = new Tablero();
+	jugadorUno = new Humano();
 }
 
 Partida::~Partida(){
@@ -8,8 +10,5 @@ Partida::~Partida(){
 
 void Partida::iniciarPartida()
 {
-	Tablero * tablero = new Tablero();
-	tablero->generarTablero();
-	tablero->mostrarTablero();
-	
-}
+	jugadorUno->elegirFichas(tablero);
+}	
