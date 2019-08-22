@@ -21,7 +21,7 @@ class Tablero{
         void setNumeroCasillas();
         
 		//Otros metodos
-        void generarTablero();
+        void generarTablero(int fichaUno, int fichaDos);
         void mostrarTablero();
 
 };

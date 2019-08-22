@@ -15,13 +15,18 @@ void Tablero::setNumeroCasillas()
 	{
 		std::cout << "Digite el numero de filas y columnas del tablero: ";
 		std::cin >> filas;
+
+		if(filas < 7)
+		{
+			std::cout << "Por favor digite un numero de filas y columnas valido." << std::endl;
+		}
 	
 		columnas = filas;
 	} while (filas < 7);
 	
 }
 
-void Tablero::generarTablero()
+void Tablero::generarTablero(int fichaUno, int fichaDos)
 {
 	setNumeroCasillas();
 	
@@ -43,9 +48,9 @@ void Tablero::generarTablero()
 			if(i % 2 == 0 && j % 2 == 0 && i <= 2){
 				tableroPuntero[i][j] = new Casilla(i ,j ,0);
 			}if(i % 2 == 0 && j % 2 != 0 && i <= 2){
-				tableroPuntero[i][j] = new Peon(i, j, 2);
+				tableroPuntero[i][j] = new Peon(i, j, fichaDos);
 			}if(i % 2 != 0 && j % 2 == 0 && i <= 2){
-				tableroPuntero[i][j] = new Peon(i, j, 2);
+				tableroPuntero[i][j] = new Peon(i, j, fichaDos);
 			}if(i % 2 != 0 && j % 2 != 0 && i <= 2){
 				tableroPuntero[i][j] = new Casilla(i ,j ,0);
 			}if(i > 2 && i < (3 + espaciosIntermedios)){
@@ -53,14 +58,16 @@ void Tablero::generarTablero()
 			}if(i % 2 == 0 && j % 2 == 0 && i >= (3 + espaciosIntermedios)){
 				tableroPuntero[i][j] = new Casilla(i ,j ,0);
 			}if(i % 2 == 0 && j % 2 != 0 && i >= (3 + espaciosIntermedios)){
-				tableroPuntero[i][j] = new Peon(i, j, 1);
+				tableroPuntero[i][j] = new Peon(i, j, fichaUno);
 			}if(i % 2 != 0 && j % 2 == 0 && i >= (3 + espaciosIntermedios)){
-				tableroPuntero[i][j] = new Peon(i, j, 1);
+				tableroPuntero[i][j] = new Peon(i, j, fichaUno);
 			}if(i % 2 != 0 && j % 2 != 0 && i >= (3 + espaciosIntermedios)){
 				tableroPuntero[i][j] = new Casilla(i ,j ,0);
 			}
 		}
 	}
+
+	mostrarTablero();
 }
 
 void Tablero::mostrarTablero()
@@ -70,9 +77,9 @@ void Tablero::mostrarTablero()
 	{
 		for(int j = 0; j < columnas; j++)
 		{
-			std::cout << tableroPuntero[i][j]->getFormaEspacio() << "  ";
+			std::cout << tableroPuntero[i][j]->getFormaEspacio() << "   ";
 		}
-		
+		std::cout << std::endl;
 		std::cout << std::endl;
 	}
 }
