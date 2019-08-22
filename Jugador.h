@@ -2,6 +2,7 @@
 #define JUGADOR_H
 #include <vector>
 #include "Ficha.h"
+#include "Tablero.h"
 
 class Jugador{
     protected:
@@ -9,10 +10,12 @@ class Jugador{
         bool tieneTurno;
         bool ganador;
     
-    protected:
+    public:
         Jugador();
         ~Jugador();
 
+        //Metodos in game
+        void elegirFichas(Tablero * tablero);
         void setTurno();
         void eliminarFicha();
         void moverFicha();
