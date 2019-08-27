@@ -14,3 +14,21 @@ int EspacioTablero::getFormaEspacio()
 {
     return forma;
 }
+
+void EspacioTablero::setFilaPosicion(int fila){
+    filaPosicion = fila;
+}
+
+void EspacioTablero::setColumnaPosicion(int columna){
+    columnaPosicion = columna;
+}
+
+int EspacioTablero::getFilaPosicion()
+{
+    return filaPosicion;
+}
+
+int EspacioTablero::getColumnaPosicion()
+{
+    return columnaPosicion;
+}

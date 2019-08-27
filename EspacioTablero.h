@@ -10,8 +10,11 @@ class EspacioTablero{
     public:
         EspacioTablero(int filaPosicion, int columnaPosicion, int forma);
         ~EspacioTablero();
-        void setPosicion(int fila, int columna);
+        void setFilaPosicion(int fila);
+		void setColumnaPosicion(int columna);
         int getFormaEspacio();
+        int getFilaPosicion();
+        int getColumnaPosicion();
 };
 
 #endif
