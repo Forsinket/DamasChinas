@@ -8,8 +8,7 @@ class Ficha: public EspacioTablero{
 		Ficha(int filaPosicion, int columnaPoisicion, int forma);
 		~Ficha();
 		
-		virtual void moverFicha();
-		bool puedeComer();
+		
 };
 
 #endif
