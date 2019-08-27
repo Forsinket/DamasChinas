@@ -15,7 +15,8 @@ class Jugador{
         ~Jugador();
 
         //Metodos in game
-        void elegirFichas(Tablero * tablero);
+        
+        void elegirFichas();
         void setTurno();
         void eliminarFicha();
         void moverFicha();

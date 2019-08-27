@@ -40,6 +40,8 @@ void Tablero::generarTablero(int fichaUno, int fichaDos)
 	int espaciosIntermedios = filas - 6;
 	
 	//Generando tablero
+
+	
 	
 	for(int i = 0; i < filas; i++)
 	{

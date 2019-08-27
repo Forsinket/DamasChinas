@@ -6,3 +6,8 @@ Casilla::Casilla(int filaPosicion, int columnaPosicion, int forma):EspacioTabler
     this->columnaPosicion = columnaPosicion;
     this->forma = forma;
 }
+
+Casilla::~Casilla()
+{
+    
+}
