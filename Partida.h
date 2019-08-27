@@ -12,6 +12,7 @@ class Partida{
     Jugador * jugadorUno;
     Jugador * jugadorDos;
     Maquina * maquina;
+    
 
 	public:
     //Constructor y destructor
@@ -19,12 +20,15 @@ class Partida{
         ~Partida();
 
     //Metodos
+        
         void iniciarPartida();
     	void cerrarPartida();
         void elegirFichas(Tablero * tablero);
         void modoDeJuego();
         void partidaHumanos();
         void partidaIA();
+        
+      
 };
 
 

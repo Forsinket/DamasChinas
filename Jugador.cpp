@@ -11,3 +11,7 @@ Jugador::~Jugador(){
 
 }
 
+ void Jugador::moverFicha()
+ {
+     
+ }
