@@ -1,10 +1,16 @@
 #include "Partida.h"
+#include "Maquina.h"
+#include "Humano.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
+
+ 
 Partida::Partida(){
 	tablero = new Tablero();
 	jugadorUno = new Humano();
+	
 }
 
 Partida::~Partida(){
@@ -13,6 +19,7 @@ Partida::~Partida(){
 void Partida::iniciarPartida()
 {
 	modoDeJuego();
+
 }	
 
 
@@ -28,13 +35,11 @@ void Partida::modoDeJuego()
 	switch (modoJuego)
 	{
 	case 1:
-		
-		elegirFichas(tablero);
+		partidaHumanos();
 
 		break;
 	case 2:
-		
-		elegirFichas(tablero);
+		partidaIA();
 
 		break;
 	
@@ -70,12 +75,73 @@ void Partida::elegirFichas(Tablero * tablero)
 }
 
 
-void partidaHumanos()
+void Partida::partidaHumanos()
 {
+	int turnoFila,turnoColumna;
+	bool victoria = false;
+	string nombre1,nombre2;
 
-}
+		
 
-void partidaIA()
-{
+		jugadorDos = new Humano();
+		elegirFichas(tablero);
+
+		cout << "ingrese nombre jugador 1" << endl;
+		cin >> nombre1;
+		cout << "Ingrese nombre jugador 2" << endl;
+		cin >> nombre2;
+
+	do
+	{
+		cout << "Turno " << nombre1 << endl;
+		cout << "ingrese # de fila" << endl;
+		cin >> turnoFila;
+		cout << "ingrese # de columna" << endl;
+		cin >> turnoColumna;
+		jugadorUno->moverFicha();
+
+
+
+
+		cout << "Turno " << nombre2 << endl;
+		cout << "ingrese # de fila" << endl;
+		cin >> turnoFila;
+		cout << "ingrese # de columna" << endl;
+		cin >> turnoColumna;
+		jugadorDos->moverFicha();
+		
+	} while (victoria == false);
 	
+
 }
+
+void Partida::partidaIA()
+{
+	int turnoFila,turnoColumna;
+	bool victoria = false;
+	string nombre1;
+
+		cout << "ingrese nombre jugador 1" << endl;
+		cin >> nombre1;
+
+		maquina = new Maquina();
+		elegirFichas(tablero);
+
+	do
+	{
+		cout << "Turno " << nombre1 << endl;
+		cout << "ingrese # de fila" << endl;
+		cin >> turnoFila;
+		cout << "ingrese # de columna" << endl;
+		cin >> turnoColumna;
+		jugadorUno->moverFicha();
+
+
+		maquina->moverFicha();
+
+	} while (victoria == false);
+}
+
+
+
+
