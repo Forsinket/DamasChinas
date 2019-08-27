@@ -80,7 +80,6 @@ void Tablero::mostrarTablero()
 			std::cout << tableroPuntero[i][j]->getFormaEspacio() << "   ";
 		}
 		std::cout << std::endl;
-		std::cout << std::endl;
 	}
 }
 
