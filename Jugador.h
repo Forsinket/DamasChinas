@@ -1,12 +1,12 @@
 #ifndef JUGADOR_H
 #define JUGADOR_H
 #include <vector>
+#include "EspacioTablero.h"
 #include "Ficha.h"
 #include "Tablero.h"
 
 class Jugador{
     protected:
-        std::vector<Ficha*> fichas;
         bool tieneTurno;
         bool ganador;
     
@@ -15,12 +15,11 @@ class Jugador{
         ~Jugador();
 
         //Metodos in game
-        
         void elegirFichas();
         void eliminarFicha();
-        void moverFicha();
+        void moverFicha(int fila, int columna, Tablero * tablero, EspacioTablero * &ficha);
         bool puedeComer();
-        bool puedeMover();
+        bool puedeMover(int fila, int columna, bool jugadorUno, bool jugadorDos, EspacioTablero * &ficha);
 };
 
 #endif 
