@@ -85,3 +85,23 @@ void Tablero::mostrarTablero()
 	}
 }
 
+bool Tablero::hayFicha(int fila, int columna){
+	if(tableroPuntero[fila][columna]->getFormaEspacio == 1 || 
+	tableroPuntero[fila][columna]->getFormaEspacio == 2){
+		return true;
+	} else{
+		return false;
+	}
+}
+
+void Tablero::actualizarMatriz(int filaActual, int columnaActual, int filaNueva, int columnaNueva)
+{
+	tableroPuntero[filaActual][columnaActual] = new Casilla(filaActual, columnaActual, 0);
+
+	tableroPuntero[filaNueva][columnaNueva] = new Peon(filaNueva, columnaNueva, 1);
+}
+
+EspacioTablero * Tablero::getFicha(int fila, int columna)
+{
+	return tableroPuntero[fila][columna];
+}

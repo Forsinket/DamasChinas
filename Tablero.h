@@ -23,7 +23,9 @@ class Tablero{
 		//Otros metodos
         void generarTablero(int fichaUno, int fichaDos);
         void mostrarTablero();
-
+        bool hayFicha(int fila, int columna);
+        void actualizarMatriz(int filaActual, int columnaActual, int filaNueva, int columnaNueva);
+        EspacioTablero * getFicha(int fila, int columna);
 };
 
 #endif
