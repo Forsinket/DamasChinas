@@ -81,8 +81,6 @@ void Partida::partidaHumanos()
 	bool victoria = false;
 	string nombre1,nombre2;
 
-		
-
 		jugadorDos = new Humano();
 		elegirFichas(tablero);
 
@@ -98,17 +96,23 @@ void Partida::partidaHumanos()
 		cin >> turnoFila;
 		cout << "ingrese # de columna" << endl;
 		cin >> turnoColumna;
-		jugadorUno->moverFicha();
 
+		if(jugadorUno->puedeMover(turnoFila, turnoColumna, true, false, tablero->getFicha(turnoFila, turnoColumna)) &&
+			tablero->hayFicha(turnoFila, turnoColumna)){
 
+			jugadorUno->moverFicha(turnoFila, turnoColumna, tablero, 
+			tablero->getFicha(turnoFila, turnoColumna));
 
+			tablero->mostrarTablero();
+
+		}
 
 		cout << "Turno " << nombre2 << endl;
 		cout << "ingrese # de fila" << endl;
 		cin >> turnoFila;
 		cout << "ingrese # de columna" << endl;
 		cin >> turnoColumna;
-		jugadorDos->moverFicha();
+		jugadorDos->moverFicha(turnoFila, turnoColumna);
 		
 	} while (victoria == false);
 	
